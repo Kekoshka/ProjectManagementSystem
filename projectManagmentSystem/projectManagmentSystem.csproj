@@ -9,7 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Remove="Images\BurgerMenuIsClose.png" />
+    <None Remove="Images\BurgerMenuIsOpen.png" />
+    <None Remove="Images\Projects.png" />
+    <None Remove="Images\Tasks.png" />
+    <None Remove="Images\UserImg.jpg" />
+    <None Remove="Images\Users.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\BurgerMenuIsClose.png" />
+    <Resource Include="Images\BurgerMenuIsOpen.png" />
+    <Resource Include="Images\Projects.png" />
+    <Resource Include="Images\Tasks.png" />
+    <Resource Include="Images\UserImg.jpg" />
+    <Resource Include="Images\Users.png" />
   </ItemGroup>
 
 </Project>

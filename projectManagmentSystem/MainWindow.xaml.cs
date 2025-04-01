@@ -25,9 +25,38 @@ namespace projectManagmentSystem
             Instance = this;
             OpenPage(new Pages.Authorization());
         }
-        public static void OpenPage(Page page)
+        public void OpenPage(Page page)
         {
-            MainWindow.Instance.frame.Navigate(page);
+            MainWindow.Instance.Frame.Navigate(page);
+        }
+
+        private void OpenTasks(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenProjects(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenUsers(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenMenu(object sender, RoutedEventArgs e)
+        {
+            if(Menu.Width == 200)
+            {
+                Menu.Width = 50;
+                Frame.Margin = new Thickness(50,0,0,0);
+            }
+            else
+            {
+                Frame.Margin = new Thickness(200, 0, 0, 0);
+                Menu.Width = 200;
+            }
         }
     }
 }

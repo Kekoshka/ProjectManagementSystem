@@ -6,7 +6,43 @@
         xmlns:local="clr-namespace:projectManagmentSystem"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Frame x:Name="frame"/>
+    <Grid Background="White">
+        <Grid x:Name="Menu" HorizontalAlignment="Left" Width="50" Visibility="Hidden">
+            <Button Click="OpenMenu" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Background="Transparent" BorderThickness="0">
+                <Image Source="/Images/BurgerMenuIsClose.png"/>
+            </Button>
+            <StackPanel VerticalAlignment="Top" Margin="0,50,0,0">
+                <Grid>
+                    <Border CornerRadius="50" HorizontalAlignment="Left" Margin="10,0,0,0" Height="30" Width="30">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Images/UserImg.jpg"/>
+                        </Border.Background>
+                    </Border>
+                    <Label x:Name="UserName" VerticalContentAlignment="Center" Content="Фамилия Имя" Margin="45,0,0,0" FontSize="14" FontWeight="Medium" MaxWidth="160" HorizontalAlignment="Left"/>
+                </Grid>
+                <Button Click="OpenUsers" Background="Transparent" Height="30" BorderThickness="0" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Images/Users.png" Height="20" Margin="15,0,0,0"/>
+                        <TextBlock x:Name="TextMenuUsers" Text="Пользователи" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Padding="14,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="OpenProjects" Background="Transparent" Height="30" BorderThickness="0" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Images/Projects.png" Height="20" Margin="15,0,0,0"/>
+                        <TextBlock x:Name="TextMenuProjects" Text="Проекты" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Padding="14,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="OpenTasks" Background="Transparent" Height="30" BorderThickness="0" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Images/Tasks.png" Height="20" Margin="15,0,0,0"/>
+                        <TextBlock x:Name="TextMenuTasks" Text="Задачи" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Padding="14,0,0,0"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Frame x:Name="Frame" Margin="50,0,0,0" NavigationUIVisibility="Hidden">
+            
+        </Frame>
     </Grid>
 </Window>

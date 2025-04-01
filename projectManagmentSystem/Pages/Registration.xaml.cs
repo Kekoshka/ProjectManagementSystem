@@ -25,5 +25,15 @@ namespace projectManagmentSystem.Pages
             InitializeComponent();
 
         }
+
+        private void OpenAuthorization(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Instance.OpenPage(new Pages.Authorization());
+        }
+
+        private void Reg(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

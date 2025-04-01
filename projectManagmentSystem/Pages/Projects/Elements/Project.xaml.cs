@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace projectManagmentSystem.Pages
+namespace projectManagmentSystem.Pages.Projects.Elements
 {
     /// <summary>
-    /// Логика взаимодействия для Authorization.xaml
+    /// Логика взаимодействия для Project.xaml
     /// </summary>
-    public partial class Authorization : Page
+    public partial class Project : UserControl
     {
-        public Authorization()
+        public Project()
         {
             InitializeComponent();
-        }
-
-        private void OpenRegistration(object sender, RoutedEventArgs e)
-        {
-            MainWindow.Instance.OpenPage(new Pages.Registration());
-        }
-
-        private void Auth(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
