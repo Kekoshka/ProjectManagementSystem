@@ -26,4 +26,9 @@
     <Resource Include="Images\Users.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Project\Новая папка\" />
+    <Folder Include="Pages\Users\" />
+  </ItemGroup>
+
 </Project>

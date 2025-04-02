@@ -13,19 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace projectManagmentSystem.Pages.Projects
+namespace projectManagmentSystem.Pages.Subtask
 {
     /// <summary>
-    /// Логика взаимодействия для ListProjects.xaml
+    /// Логика взаимодействия для Subtask.xaml
     /// </summary>
-    public partial class ListProjects : Page
+    public partial class Subtask : UserControl
     {
-        public ListProjects()
+        public Subtask()
         {
             InitializeComponent();
         }
-
-        private void CreateProject(object sender, RoutedEventArgs e)
+        private void OpenTask(object sender, MouseButtonEventArgs e)
         {
 
         }

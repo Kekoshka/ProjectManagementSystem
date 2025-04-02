@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace projectManagmentSystem.Pages.Projects
+{
+    /// <summary>
+    /// Логика взаимодействия для ListProjects.xaml
+    /// </summary>
+    public partial class ListProjects : Page
+    {
+        List<Models.Project> Projects { get; set; }
+        public ListProjects()
+        {
+            InitializeComponent();
+        }
+
+        private void CreateProject(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿<Page x:Class="projectManagmentSystem.Pages.Task.Task"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projectManagmentSystem.Pages.Task"
+      mc:Ignorable="d" 
+      Title="Task">
+
+    <Grid>
+        <Grid Background="Black" Opacity="0.2" MouseUp="CloseFrame"/>
+        <Border CornerRadius="10" Margin="125,0,125,0" Background="White" MinWidth="500" MaxWidth="1000">
+            <StackPanel>
+                <Label Content="Название" FontSize="16" FontWeight="Medium"/>
+                <TextBlock x:Name="Name" Height="30" Margin="10,0,10,0"/>
+                <Label Content="Описание" FontSize="16" FontWeight="Medium"/>
+                <TextBlock x:Name="Description" Height="100" Margin="10,0,10,0"/>
+                <Label Content="Ответственные" FontSize="16" FontWeight="Medium"/>
+                <StackPanel x:Name="ResponsiblesParent">
+                </StackPanel>
+                <Label Content="Подзадачи" FontSize="16" FontWeight="Medium"/>
+                <StackPanel x:Name="SubtasksParent">
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

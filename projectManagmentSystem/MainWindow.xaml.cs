@@ -18,12 +18,13 @@ namespace projectManagmentSystem
 
     {
         public static MainWindow Instance;
-
+        public static Task OpenedTask;
         public MainWindow()
         {
             InitializeComponent();
             Instance = this;
-            OpenPage(new Pages.Authorization());
+            OpenPage(new Pages.Canban.Canban());
+            OpenFrameInFrame(new Pages.Subtask.SaveSubtask());
         }
         public void OpenPage(Page page)
         {
@@ -35,15 +36,9 @@ namespace projectManagmentSystem
 
         }
 
-        private void OpenProjects(object sender, RoutedEventArgs e)
-        {
+        private void OpenProjects(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Projects.ListProjects());
 
-        }
-
-        private void OpenUsers(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void OpenUsers(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Users.ListUsers());
 
         private void OpenMenu(object sender, RoutedEventArgs e)
         {
@@ -51,12 +46,18 @@ namespace projectManagmentSystem
             {
                 Menu.Width = 50;
                 Frame.Margin = new Thickness(50,0,0,0);
+                FrameInFrame.Margin = new Thickness(50, 0, 0, 0);
             }
             else
             {
+                FrameInFrame.Margin = new Thickness(200, 0, 0, 0);
                 Frame.Margin = new Thickness(200, 0, 0, 0);
                 Menu.Width = 200;
             }
+        }
+        public void OpenFrameInFrame(Page page)
+        {
+            MainWindow.Instance.FrameInFrame.Navigate(page);
         }
     }
 }

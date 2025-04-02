@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace projectManagmentSystem.Pages.Projects.Elements
+namespace projectManagmentSystem.Pages.Scrum
 {
     /// <summary>
-    /// Логика взаимодействия для Project.xaml
+    /// Логика взаимодействия для Scrum.xaml
     /// </summary>
-    public partial class Project : UserControl
+    public partial class Scrum : Page
     {
-        public Project()
+        public Scrum()
         {
             InitializeComponent();
+        }
+
+        private void CreateColumn(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

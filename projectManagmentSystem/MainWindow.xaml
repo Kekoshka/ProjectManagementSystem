@@ -40,9 +40,7 @@
                 </Button>
             </StackPanel>
         </Grid>
-
-        <Frame x:Name="Frame" Margin="50,0,0,0" NavigationUIVisibility="Hidden">
-            
-        </Frame>
+        <Frame x:Name="Frame" Margin="50,0,0,0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="FrameInFrame" NavigationUIVisibility="Hidden" Margin="50,0,0,0"/>
     </Grid>
 </Window>
