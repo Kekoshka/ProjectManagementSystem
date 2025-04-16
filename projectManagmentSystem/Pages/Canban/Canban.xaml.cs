@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectManagmentSystem.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,26 @@ namespace projectManagmentSystem.Pages.Canban
     /// </summary>
     public partial class Canban : Page
     {
-        public Canban()
+        Models.Project Project;
+        public Canban(Models.Project project)
         {
             InitializeComponent();
+            this.Project = project;
+            if (project != null)
+                LoadInterface();
         }
 
-        private void CreateColumn(object sender, RoutedEventArgs e)
+        private void CreateColumn(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenFrameInFrame( new Pages.Canban.SaveColumn());
+        private void LoadInterface()
         {
-
+            using (var context = new ApplicationContext())
+            {
+                var statuses = context.ProjectStatuses.Where(ps => ps.ProjectId == Project.Id).ToList();
+                foreach (var status in statuses)
+                    ColumnsParent.Children.Add(new Elements.Column(status));
+            }
         }
+
+        private void CreateTask(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenFrameInFrame(new Pages.Task.SaveTask());
     }
 }

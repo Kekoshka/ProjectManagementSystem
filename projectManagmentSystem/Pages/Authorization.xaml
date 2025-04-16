@@ -13,9 +13,9 @@
         <StackPanel Margin="250,0,250,0" MinWidth="300" MaxWidth="500" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label Content="Авторизация" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Medium"/>
             <Label Content="Почта" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Margin="0,50,0,0"/>
-            <TextBox x:Name="Post" Height="30" Margin="50,0,50,0"/>
+            <TextBox x:Name="Mail" Text="kekoshkaa@gmail.com" Height="30" Margin="50,0,50,0"/>
             <Label Content="Пароль" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium"/>
-            <PasswordBox x:Name="Password" Height="30" Margin="50,0,50,0"/>
+            <PasswordBox x:Name="Password" Height="30" Password="Asdfg123#" Margin="50,0,50,0"/>
             <Button Click="Auth" Height="30" Content="Войти" Margin="50,25,50,0"/>
             <Button Click="OpenRegistration" Background="Transparent" Content="Зарегистрироваться" Width="120" Margin="0,10,0,0" BorderThickness="0"/>
         </StackPanel>

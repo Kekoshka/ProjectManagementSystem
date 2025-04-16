@@ -1,9 +1,9 @@
-﻿<Page x:Class="projectManagmentSystem.Pages.Projects.ListProjects"
+﻿<Page x:Class="projectManagmentSystem.Pages.Project.ListProjects"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:projectManagmentSystem.Pages.Projects"
+      xmlns:local="clr-namespace:projectManagmentSystem.Pages.Project"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ListProjects">

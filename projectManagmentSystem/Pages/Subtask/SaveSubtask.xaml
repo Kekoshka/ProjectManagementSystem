@@ -9,14 +9,14 @@
 
     
     <Grid>
-        <Grid Background="Black" Opacity="0.2" MouseUp="OpenTask"/>
+        <Grid Background="Black" Opacity="0.2" MouseUp="SaveAndCloseFrame"/>
         <Border VerticalAlignment="Center" HorizontalAlignment="Center"  MinWidth="500" MaxWidth="1000" CornerRadius="10" Background="White">
                 <StackPanel>
                     <Label Content="Название" FontSize="16" FontWeight="Medium"/>
                     <TextBox x:Name="Name" Height="30" Margin="10,0,10,0"/>
                     <Label Content="Описание" FontSize="16" FontWeight="Medium"/>
                     <TextBox x:Name="Description" Height="100" Margin="10,0,10,0"/>
-                    <Label Content="Ответственные" FontSize="16" FontWeight="Medium"/>
+                    <Label Content="Ответственный" FontSize="16" FontWeight="Medium"/>
                     <ComboBox x:Name="ResponsibleParent" Margin="10,0,10,10" Height="30"/>
                 </StackPanel>
         </Border>

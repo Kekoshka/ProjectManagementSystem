@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using projectManagmentSystem.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,15 +20,30 @@ namespace projectManagmentSystem.Pages.Subtask
     /// <summary>
     /// Логика взаимодействия для Subtask.xaml
     /// </summary>
-    public partial class Subtask : UserControl
+    public partial class Subtask : Page
     {
-        public Subtask()
+        Models.Subtask subtask;
+        public Subtask(Models.Subtask subtask)
         {
             InitializeComponent();
-        }
-        private void OpenTask(object sender, MouseButtonEventArgs e)
-        {
+            this.subtask = subtask;
+            if (subtask != null);
+            LoadInterface();
 
+        }
+        private void CloseFrame(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow.Instance.OpenFrameInFrame(null);
+        }
+        void LoadInterface()
+        {
+            Name.Text = subtask.Name;
+            Description.Text = subtask.Description;
+            using (var context = new ApplicationContext())
+            {
+                var user = context.Subtasks.Include(s => s.User).FirstOrDefault(s => s.Id == subtask.Id).User;
+                ResponsibleParent.Children.Add(new Elements.User(user));
+            }
         }
     }
 }

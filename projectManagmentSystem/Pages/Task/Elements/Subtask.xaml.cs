@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectManagmentSystem.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,19 +21,29 @@ namespace projectManagmentSystem.Pages.Task.Elements
     /// </summary>
     public partial class Subtask : UserControl
     {
-        public Subtask()
+        Models.Subtask subtask;
+        public Subtask(Models.Subtask subtask)
         {
             InitializeComponent();
+            this.subtask = subtask;
+            if(subtask!= null)
+                Name.Content = subtask.Name;
         }
 
         private void OpenSubtask(object sender, MouseButtonEventArgs e)
         {
-
+            MainWindow.Instance.OpenFrameInFrame(null);
+            MainWindow.Instance.OpenPage(new Pages.CanbanSubtask.CanbanSubtask(MainWindow.OpenedTask));
         }
-
         private void DeleteSubtask(object sender, RoutedEventArgs e)
         {
-
+            using (var context = new ApplicationContext())
+            {
+                var subtask = context.Subtasks.FirstOrDefault(s => s == this.subtask);
+                if (subtask != null)
+                    context.Subtasks.Remove(subtask);
+                context.SaveChanges();
+            }
         }
     }
 }

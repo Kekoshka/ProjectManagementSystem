@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace projectManagmentSystem.Models
 {
-    public class StatusSubtask
+    public  class ProjectStatus
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Subtask> Subtasks { get; set; }
+        public int ProjectId { get; set; }
+        public Project Project { get; set; }
     }
 }

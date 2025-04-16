@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projectManagmentSystem.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,42 @@ namespace projectManagmentSystem.Pages.Canban.Elements
     /// </summary>
     public partial class Task : UserControl
     {
-        public Task()
+        Models.Task task;
+        public Task(Models.Task task)
         {
             InitializeComponent();
+            this.task = task;
+            if (task != null)
+                LoadInterface();
+        }
+        void LoadInterface()
+        {
+            TaskName.Text = task.Name;
+            Description.Text = task.Description;
+        }
+
+        private void OpenCanbanSubtask(object sender, MouseButtonEventArgs e) 
+        {
+            MainWindow.OpenedTask = task;
+            MainWindow.Instance.OpenPage(new Pages.CanbanSubtask.CanbanSubtask(task));
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+            MainWindow.OpenedTask = task;
+            using (var context = new ApplicationContext())
+            {
+                var task = context.Tasks.FirstOrDefault(t => t == this.task);
+                context.Tasks.Remove(task);
+                context.SaveChanges();
+                MainWindow.Instance.OpenPage(new Pages.Canban.Canban(MainWindow.OpenedProject));
+            }
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+            MainWindow.OpenedTask = task;
+            MainWindow.Instance.OpenFrameInFrame(new Pages.Task.SaveTask(task));
         }
     }
 }

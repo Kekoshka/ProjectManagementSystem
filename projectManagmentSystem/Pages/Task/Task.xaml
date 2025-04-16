@@ -8,13 +8,13 @@
       Title="Task">
 
     <Grid>
-        <Grid Background="Black" Opacity="0.2" MouseUp="CloseFrame"/>
-        <Border CornerRadius="10" Margin="125,0,125,0" Background="White" MinWidth="500" MaxWidth="1000">
+        <Button Background="Black" Opacity="0.2" BorderThickness="0" MouseUp="CloseFrame" IsCancel="True"/>
+        <Border CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White" MinWidth="500" MaxWidth="1000">
             <StackPanel>
                 <Label Content="Название" FontSize="16" FontWeight="Medium"/>
-                <TextBlock x:Name="Name" Height="30" Margin="10,0,10,0"/>
+                <TextBlock x:Name="Name" Height="auto" Margin="10,0,10,0"/>
                 <Label Content="Описание" FontSize="16" FontWeight="Medium"/>
-                <TextBlock x:Name="Description" Height="100" Margin="10,0,10,0"/>
+                <TextBlock x:Name="Description" Height="auto" MaxHeight="100" Margin="10,0,10,0" TextWrapping="Wrap"/>
                 <Label Content="Ответственные" FontSize="16" FontWeight="Medium"/>
                 <StackPanel x:Name="ResponsiblesParent">
                 </StackPanel>

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace projectManagmentSystem.Common
 {
-    public class Config
+    public static class Config
     {
-        public readonly string ConnectionString = "Server=;Database=;Trusted_Connection=true;Encrypt=false";
+        public static readonly string ConnectionString = "Server=ASUS_ROG_STRIX;Database=PMS;Trusted_Connection=true;Encrypt=false";
     }
 }

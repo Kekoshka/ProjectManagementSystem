@@ -11,7 +11,11 @@
   <ItemGroup>
     <None Remove="Images\BurgerMenuIsClose.png" />
     <None Remove="Images\BurgerMenuIsOpen.png" />
+    <None Remove="Images\Cancel.png" />
+    <None Remove="Images\Edit.png" />
+    <None Remove="Images\Logout.png" />
     <None Remove="Images\Projects.png" />
+    <None Remove="Images\Remove.png" />
     <None Remove="Images\Tasks.png" />
     <None Remove="Images\UserImg.jpg" />
     <None Remove="Images\Users.png" />
@@ -20,15 +24,24 @@
   <ItemGroup>
     <Resource Include="Images\BurgerMenuIsClose.png" />
     <Resource Include="Images\BurgerMenuIsOpen.png" />
+    <Resource Include="Images\Cancel.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Logout.png" />
     <Resource Include="Images\Projects.png" />
+    <Resource Include="Images\Remove.png" />
     <Resource Include="Images\Tasks.png" />
     <Resource Include="Images\UserImg.jpg" />
     <Resource Include="Images\Users.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Project\Новая папка\" />
-    <Folder Include="Pages\Users\" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

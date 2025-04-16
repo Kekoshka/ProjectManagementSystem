@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using projectManagmentSystem.Context;
+using projectManagmentSystem.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -17,14 +19,19 @@ namespace projectManagmentSystem
     public partial class MainWindow : Window
 
     {
+        public static List<Role> Roles;
         public static MainWindow Instance;
-        public static Task OpenedTask;
+        public static Models.Task OpenedTask;
+        public static Models.Project OpenedProject;
+        public static User CurrentUser;
+        public static Page CurrentPage;
+        public static Page Task;
         public MainWindow()
         {
             InitializeComponent();
             Instance = this;
-            OpenPage(new Pages.Canban.Canban());
-            OpenFrameInFrame(new Pages.Subtask.SaveSubtask());
+            LoadData();
+            OpenPage(new Pages.Authorization());
         }
         public void OpenPage(Page page)
         {
@@ -36,7 +43,7 @@ namespace projectManagmentSystem
 
         }
 
-        private void OpenProjects(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Projects.ListProjects());
+        private void OpenProjects(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Project.ListProjects());
 
         private void OpenUsers(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Users.ListUsers());
 
@@ -59,5 +66,14 @@ namespace projectManagmentSystem
         {
             MainWindow.Instance.FrameInFrame.Navigate(page);
         }
+        private void LoadData()
+        {
+            using (var context = new ApplicationContext())
+            {
+                Roles = context.Roles.ToList();
+            }
+        }
+
+        private void Logout(object sender, RoutedEventArgs e) => MainWindow.Instance.OpenPage(new Pages.Authorization());
     }
 }

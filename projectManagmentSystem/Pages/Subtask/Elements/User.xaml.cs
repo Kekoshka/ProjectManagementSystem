@@ -20,9 +20,13 @@ namespace projectManagmentSystem.Pages.Subtask.Elements
     /// </summary>
     public partial class User : UserControl
     {
-        public User()
+        Models.User user;
+        public User(Models.User user)
         {
             InitializeComponent();
+            this.user = user;
+            if(user!= null)
+                FIO.Content = user.GetFIO();
         }
     }
 }

@@ -10,9 +10,10 @@ namespace projectManagmentSystem.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public bool Private { get; set; }
-        public int UserId { get; set; } //Создатель проекта
-        public ICollection<StatusTask> StatusTasks { get; set; }
+        public ICollection<Task>? Tasks { get; set; }
+        public ICollection<Participation>? Participations{ get; set; }
+        public ICollection<ProjectStatus> ProjectStatuses { get; set; }
     }
 }

@@ -5,10 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:projectManagmentSystem.Pages.Projects.Elements"
              mc:Ignorable="d">
-    <Border MinWidth="100" MaxWidth="300" Height="50" Background="White" MouseUp="OpenProjectCanban" CornerRadius="10">
-        <Grid>
-            <Label x:Name="Name" Content="Название проекта" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Label x:Name="Owner" Content="Владелец: Фамилия Имя" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        </Grid>
+    <Border Margin="5" MinWidth="100" MaxWidth="200" MaxHeight="150" Background="White" MouseUp="OpenProjectCanban" CornerRadius="10" BorderThickness="0.5" BorderBrush="Gray">
+        <StackPanel>
+            <TextBlock x:Name="Name" Padding="5" Text="Название проекта" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Owner" Padding="5" Text="Владелец: Фамилия Имя"  HorizontalAlignment="Left" TextWrapping="Wrap"/>
+            <Grid>
+                <Button Click="Delete" Height="20" Width="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Margin="0,0,30,0">
+                    <Image Source="/Images/Remove.png"/>
+                </Button>
+                <Button Click="Edit" Height="20" Width="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Margin="0,0,5,0">
+                    <Image Source="/Images/Edit.png"/>
+                </Button>
+            </Grid>
+        </StackPanel>
     </Border>
 </UserControl>

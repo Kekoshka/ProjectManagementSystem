@@ -11,10 +11,11 @@
     <Grid Background="White">
         <Grid Height="50" VerticalAlignment="Top">
             <Label Content="Canban" FontSize="24" Margin="10,0,0,0" FontWeight="Bold" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button Click="CreateTask" Height="30" Width="100" Content="Добавить задачу" VerticalAlignment="Top" BorderThickness="0" HorizontalAlignment="Right" Margin="0,10,120,0" Foreground="White" Background="#2752ec"/>
             <Button Click="CreateColumn" Height="30" Width="100" Content="Добавить статус" VerticalAlignment="Top" BorderThickness="0" HorizontalAlignment="Right" Margin="10" Foreground="White" Background="#2752ec"/>
         </Grid>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Margin="0,50,0,0">
-            <StackPanel x:Name="ColumnsParent" Margin="10,10,0,10" />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,50,0,0">
+            <StackPanel x:Name="ColumnsParent" Orientation="Horizontal" Margin="10,10,0,10" />
         </ScrollViewer>
     </Grid>
 </Page>

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace projectManagmentSystem.Models
 {
-    class Role
+    public class Role
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<ProjectUser> ProjectUsers{ get; set; }
+        public ICollection<Participation> Participations{ get; set; }
     }
 }
